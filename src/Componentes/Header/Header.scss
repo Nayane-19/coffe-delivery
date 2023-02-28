@@ -1,0 +1,30 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 104px;
+
+    .logo {
+        width: 84px;
+        height: 40px;
+    }
+
+    .buttons-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        .button-location {
+            background: var(--purple-light);
+            color: var(--purple-dark);
+            border: none;
+        }
+
+        .button-cart {
+            background: var(--yellow-light);
+            color: var(--yellow-dark);
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+.LayoutContainer {
+    width: 100%;
+    max-width: 1600px;
+    height: calc(100vh - 10rem);
+    background: var(--background);
+    padding: 2rem 10rem;
+    border-radius: 8px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+        padding: 2rem;
+    }
+}
