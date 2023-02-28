@@ -35,13 +35,6 @@
     }
   }
 
-  img {
-    max-width: 50%;
-    max-height: 50%;
-    width: auto;
-    height: auto;
-  }
-
   @media (max-width: 798px) {
     flex-direction: column-reverse;
     justify-content: center;
@@ -50,10 +43,6 @@
 
     .left-container {
         width: 100%;
-    }
-
-    img {
-        max-width: 100%;
     }
   }
 

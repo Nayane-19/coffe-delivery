@@ -1,6 +1,8 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { InfoCoffe } from "../InfoCoffe";
 import CoffeImg from "../../assets/coffe-banner.svg"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import "./Banner.scss"
 
 
@@ -31,7 +33,7 @@ export function Banner() {
                     </InfoCoffe>
                 </div>
             </div>
-            <img src={CoffeImg} alt="coffe-banner" />
+            <LazyLoadImage src={CoffeImg} alt="coffe-banner" effect="blur" />
         </div>
     )
 }
