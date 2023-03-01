@@ -1,0 +1,16 @@
+.Home {
+    padding: 0 0 10rem;
+    h2 {
+        font-family: var(--font-baloo);
+        font-size: 32px;
+        line-height: 2.6rem;
+        margin: 0 0 3rem;
+    }
+
+    .coffes-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+        row-gap: 2rem;
+        column-gap: 2rem;
+    }
+}
