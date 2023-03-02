@@ -1,0 +1,90 @@
+.cep {
+  grid-area: header;
+}
+.street {
+  grid-area: main;
+}
+.number {
+  grid-area: middle-left;
+}
+.complement {
+  grid-area: midddle-right;
+}
+.neighborhood {
+  grid-area: footer-left;
+}
+.city {
+  grid-area: footer-middle;
+}
+.state {
+  grid-area: footer-right;
+}
+
+.AddressForm {
+  background: var(--base-card);
+  border-radius: 6px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+
+    svg {
+      color: var(--yellow-dark);
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+
+      h6 {
+        font-size: 1rem;
+        color: var(--base-subtitle);
+        font-weight: 400;
+      }
+
+      span {
+        font-size: 0.875rem;
+        color: var(--base-text);
+      }
+    }
+  }
+
+  form {
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "header header outro outro outro outro"
+        "main main main main main main"
+        "middle-left middle-left midddle-right midddle-right midddle-right midddle-right"
+        "footer-left footer-left footer-middle footer-middle footer-middle footer-right";
+      gap: 10px;
+      padding: 10px;
+
+      .input-container {
+        width: 100%;
+
+        input {
+            width: 100%;
+            height: 42px;
+            border: 1px solid #EEEDED;
+            border-radius: 4px;
+            padding: 0 0.5rem;
+            color: var(--base-label);
+            font-size: 0.875rem;
+
+            &:focus {
+              border: 1px solid var(--yellow-dark);
+            }
+        }
+      }
+    }
+  }
+
+}

@@ -1,6 +1,7 @@
 import { Route } from "react-router";
 import { Routes } from "react-router-dom";
 import { DefaultLayout } from "./layouts/DefaulTLayout";
+import { Cart } from "./pages/Cart";
 import { Home } from "./pages/Home";
 
 export function Router() {
@@ -8,6 +9,7 @@ export function Router() {
         <Routes>
             <Route path="/" element={<DefaultLayout />}>
                 <Route path="/" element={<Home />} />
+                <Route path="/cart" element={<Cart />} />
             </Route>
         </Routes>
     );

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface CoffeData {
     id: number;
     image: string;
@@ -6,4 +8,20 @@ export interface CoffeData {
     description: string;
     value: number;
     quantity: number;
+}
+
+export interface AddressDataForm {
+    cep: string;
+    street: string;
+    number: number;
+    clomplement: string;
+    neighborhood: string;
+    city: string;
+    state: string;
+}
+
+export interface PaymentOptionsData {
+    description: string;
+    value: string;
+    icon: ReactNode;
 }
