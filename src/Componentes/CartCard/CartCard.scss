@@ -1,0 +1,68 @@
+.CartCard {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--base-button);
+
+    img {
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+
+    .left-info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+
+        .middle-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+
+            .title-item {
+                color: var(--base-subtitle);
+                font-size: 16px;
+            }
+
+            .middle-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.5rem;
+
+                .quantity {
+                    height: 2rem;
+                    background: var(--base-button);
+                }
+
+                .remove-btn {
+                    background: var(--base-button);
+                    border: none;
+                    height: 2rem;
+                    flex: 1;
+                    color: var(--base-text);
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+
+                    svg {
+                        color: var(--purple);
+                    }
+                }
+            }
+        }
+    }
+
+    .money {
+        span {
+            font-size: 1rem;
+            font-family: var(--font-roboto);
+            color: var(--base-text);
+            font-weight: 700;
+        }
+    }
+}

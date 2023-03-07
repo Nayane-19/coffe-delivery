@@ -1,6 +1,7 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CoffeData } from "../../@types/coffes"
+import { toMoney } from "../../utils";
 import { Button } from "../Button";
 import "./Card.scss"
 
@@ -9,10 +10,6 @@ interface CardProps {
 }
 
 export function Card({coffe}: CardProps){
-
-    const toMoney = (p: number) => {
-        return p? p.toFixed(2).replace('.',',') : 'Gratuito';
-    }
 
     return (
         <div className="Card">

@@ -1,0 +1,42 @@
+.Success {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto 0;
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-family: var(--font-baloo);
+      color: var(--yellow-dark);
+      font-weight: 800;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--base-subtitle);
+    }
+
+    .box-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      padding: 2.5rem;
+      border-width: 1px;
+      background: linear-gradient(var(--background), var(--background)) padding-box,
+      linear-gradient(to right, darkblue, darkorchid) border-box;
+      border: 1px solid transparent;
+      border-radius: 6px 36px;
+      gap: 2rem;
+    }
+  }
+
+  img {
+    position: relative;
+    bottom: -20px;
+  }
+}

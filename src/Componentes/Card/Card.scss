@@ -57,23 +57,6 @@
         align-items: center;
         justify-content: space-between;
         gap: 0.5rem;
-
-        .money {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--base-text);
-            gap: 0.25rem;
-
-            .prefix {
-                font-size: 0.875rem;
-            }
-
-            .value {
-                font-size: 24px;
-                font-family: var(--font-baloo);
-            }
-        }
     }
 
     .btn-right {
@@ -82,27 +65,43 @@
         justify-content: center;
         gap: 0.5rem;
 
-
-        .quantity {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: #DEDEDE;
-            padding: 0.62rem 0.5rem;
-            border-radius: 8px;
-            color: var(--base-title);
-    
-            svg {
-                color: var(--purple-dark);
-                cursor: pointer;
-            }
-        }
-
         .btn-cart {
             color: var(--white);
             background: var(--purple-dark);
             border: none;
         }
+    }
+}
+
+.money {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--base-text);
+    gap: 0.25rem;
+
+    .prefix {
+        font-size: 0.875rem;
+    }
+
+    .value {
+        font-size: 24px;
+        font-family: var(--font-baloo);
+    }
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #DEDEDE;
+    padding: 0.62rem 0.5rem;
+    border-radius: 8px;
+    color: var(--base-title);
+
+    svg {
+        color: var(--purple-dark);
+        cursor: pointer;
     }
 }

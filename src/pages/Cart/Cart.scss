@@ -5,10 +5,25 @@
     gap: 2rem;
     margin-top: 5rem;
 
-    .left-container {
-        width: 65%;
+    .title {
+        font-family: var(--font-baloo);
+        font-size: 1.12rem;
+        color: var(--base-subtitle);
+        font-weight: 700;
+        margin-bottom: -1rem;
+    }
+
+    .flex-container {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .left-container {
+        width: 65%;
+    }
+
+    .right-container {
+        width: 35%;
     }
 }

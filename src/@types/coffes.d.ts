@@ -25,3 +25,10 @@ export interface PaymentOptionsData {
     value: string;
     icon: ReactNode;
 }
+
+export interface CoffeCartData {
+    coffes: CoffeData[];
+    tottalItems: number;
+    delivery: number;
+    total: number;
+}
