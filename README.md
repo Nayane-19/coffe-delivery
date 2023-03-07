@@ -7,7 +7,8 @@
 
 <h3 align="center">Layout</h3>
 
-![Captura de tela 2023-03-07 201455](https://user-images.githubusercontent.com/53491642/223575613-0d444312-5ccb-4250-8e21-ea5ce7584ddc.png)
+
+![Captura de tela 2023-03-07 201905](https://user-images.githubusercontent.com/53491642/223577115-e02bf216-1d05-4c5a-bad7-1145cf5a384f.png)
 
 
 <h3>3. Tecnologias utilizadas</h3>
