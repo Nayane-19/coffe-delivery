@@ -1,11 +1,14 @@
 import { Router } from "./Router";
 import "./globalStyles.css";
 import { BrowserRouter } from "react-router-dom";
+import { CoffeContextProvider } from "./context/cartContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <CoffeContextProvider>
+        <Router />
+      </CoffeContextProvider>
     </BrowserRouter>
   );
 }

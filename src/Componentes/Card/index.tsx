@@ -1,6 +1,8 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
+import { useContext, useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CoffeData } from "../../@types/coffes"
+import { CoffeContext } from "../../context/cartContext";
 import { toMoney } from "../../utils";
 import { Button } from "../Button";
 import "./Card.scss"
@@ -10,6 +12,24 @@ interface CardProps {
 }
 
 export function Card({coffe}: CardProps){
+    const {createNewCycle} = useContext(CoffeContext)
+    const [quantity, setQuantity] = useState<number>(1);
+
+    function handleAddCoffeToCart(coffe: CoffeData) {
+        createNewCycle({
+            ...coffe,
+            quantity: quantity,
+        })
+    }
+
+    useEffect(() => {
+        if(quantity < 1){
+            setQuantity(1)
+        }
+        if(quantity > 99) {
+            setQuantity(99)
+        }
+    }, [quantity])
 
     return (
         <div className="Card">
@@ -34,13 +54,15 @@ export function Card({coffe}: CardProps){
                 </div>
                 <div className="btn-right">
                     <div className="quantity">
-                        <Minus size={14} />
-                        {coffe.quantity}
-                        <Plus size={14} />
+                        <Minus size={14} onClick={() => setQuantity((prevState) => prevState - 1)} />
+                        {quantity}
+                        <Plus size={14} onClick={() => setQuantity((prevState) => prevState + 1)} />
                     </div>
-                    <Button className="btn-cart">
-                        <ShoppingCart size={18} weight="fill" />
-                    </Button>
+                    <div onClick={() => handleAddCoffeToCart(coffe)}>
+                        <Button className="btn-cart">
+                            <ShoppingCart size={18} weight="fill" />
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { CartTotal, CoffeCartData } from "./cart";
 
 export interface CoffeData {
     id: number;
@@ -26,9 +27,13 @@ export interface PaymentOptionsData {
     icon: ReactNode;
 }
 
-export interface CoffeCartData {
-    coffes: CoffeData[];
-    tottalItems: number;
-    delivery: number;
-    total: number;
+export interface CoffeReduce {
+    cart: CoffeData[];
+    totalPayment: CartTotal;
+    address: AddressDataForm;
+}
+
+export interface CoffeContextData {
+    createNewCycle: (data: CoffeData) => void;
+    cart: CoffeCartData[];
 }
