@@ -1,12 +1,27 @@
 import { toMoney } from "../../utils"
 import { Button } from "../Button"
 import { CartCard } from "../CartCard"
+import { useSelector } from 'react-redux';
 import "./CartInfo.scss"
+import { StateStore } from "../../@types/reduce";
+import { CartTotal } from "../../@types/cart";
+import { CoffeData } from "../../@types/coffes";
+import { Link } from "react-router-dom";
 
 export function CartInfo() {
+    const [total, cart] : [CartTotal, CoffeData[]] = useSelector((state: StateStore) => [
+        state.CoffePersistentState.totalPayment, state.CoffePersistentState.cart
+    ])
+    
     return (
         <div className="CartInfo">
-            <CartCard />
+            <div className="card-container">
+            {cart?.map((item) => {
+                return (
+                    <CartCard coffe={item} key={item.id}/>
+                )
+            })}
+            </div>
             <div className="info-coust">
                 <div className="flex-info">
                     <p>
@@ -17,7 +32,7 @@ export function CartInfo() {
                             R$
                         </span>
                         <span className="value">
-                            {toMoney(40)}
+                            {toMoney(total.totalItems)}
                         </span>
                     </div>
                 </div>
@@ -30,7 +45,7 @@ export function CartInfo() {
                             R$
                         </span>
                         <span className="value">
-                            {toMoney(0)}
+                            {toMoney(total.delivery)}
                         </span>
                     </div>
                 </div>
@@ -43,14 +58,16 @@ export function CartInfo() {
                             R$
                         </span>
                         <span className="value">
-                            {toMoney(40)}
+                            {toMoney(total.totalValue)}
                         </span>
                     </div>
                 </div>
             </div>
-            <Button className="confirm-payment">
-                Confirmar pedido
-            </Button>
+            <Link to="/success">
+                <Button className="confirm-payment">
+                    Confirmar pedido
+                </Button>
+            </Link>
         </div>
     )
 }

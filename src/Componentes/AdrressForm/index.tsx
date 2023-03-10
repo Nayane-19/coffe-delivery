@@ -1,15 +1,42 @@
 import { MapPinLine } from "phosphor-react";
 import { useForm, Controller } from "react-hook-form";
-import { IMaskInput } from "react-imask";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AddressDataForm } from "../../@types/coffes";
+import { StateStore } from "../../@types/reduce";
+import addressSchema from "../../Schemas/addressSchema";
+import { setAddress } from "../../store/action";
 import "./AddressForm.scss";
+import InputMask from "react-input-mask";
+import * as alertify from 'alertifyjs';
 
 export function AddressForm() {
+  const address = useSelector(
+    (state: StateStore) => state.CoffePersistentState.address
+  );
+  const dispatch = useDispatch();
   const {
     register,
+    handleSubmit,
+    reset,
     control,
     formState: { errors },
-  } = useForm<AddressDataForm>();
+  } = useForm<AddressDataForm>({
+    mode: "onChange",
+    reValidateMode: "onChange",
+    resolver: addressSchema,
+  });
+
+  useEffect(() => {
+    reset({
+      ...address,
+    });
+  }, [address]);
+
+  function onSubmit(address: AddressDataForm) {
+    dispatch(setAddress(address));
+    alertify.notify("Endereço adiocionado com sucesso", "success", 5, null);
+  }
 
   return (
     <div className="AddressForm">
@@ -20,11 +47,25 @@ export function AddressForm() {
           <span>Informe o endereço onde deseja receber seu pedido</span>
         </div>
       </div>
-      <form action="">
+      <form action="" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid-container">
           <div className="input-container cep">
             <div className="input-container">
-              <input type="number" placeholder="CEP" {...register("cep")} />
+            <Controller
+                name="cep"
+                control={control}
+                render={({
+                  field: { name, value, onChange },
+                }) => (
+                  <InputMask
+                    mask="99999-999"
+                    value={value}
+                    name={name}
+                    placeholder="CEP"
+                    onChange={onChange}
+                  />
+                )}
+              />
               <span className="error">{errors.cep?.message}</span>
             </div>
           </div>
@@ -57,9 +98,14 @@ export function AddressForm() {
             <span className="error">{errors.city?.message}</span>
           </div>
           <div className="input-container state">
-            <input type="text" placeholder="UF" {...register("state")} />
+            <input type="text" placeholder="UF" {...register("state")} maxLength={2} />
             <span className="error">{errors.state?.message}</span>
           </div>
+        </div>
+        <div className="submit-container">
+          <button type="submit" className="submit-btn">
+            Confirmar endereço
+          </button>
         </div>
       </form>
     </div>

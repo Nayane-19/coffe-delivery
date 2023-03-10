@@ -61,6 +61,11 @@
             border: 1px solid var(--purple);
             background: var(--purple-light);
         }
+
+        &.selected {
+          border: 1px solid var(--purple);
+          background: var(--purple-light);
+        }
     }
   }
 }

@@ -64,7 +64,7 @@
         "main main main main main main"
         "middle-left middle-left midddle-right midddle-right midddle-right midddle-right"
         "footer-left footer-left footer-middle footer-middle footer-middle footer-right";
-      gap: 10px;
+      gap: 15px;
       padding: 10px;
 
       .input-container {
@@ -83,7 +83,35 @@
               border: 1px solid var(--yellow-dark);
             }
         }
+
+        span {
+          font-size: 0.75rem;
+          color: red;
+          font-weight: 500;
+        }
       }
+    }
+
+    .submit-container {
+      padding: 10px;
+
+      .submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.62rem 0.5rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-family: var(--font-roboto);
+        font-weight: 400;
+        gap: 0.46rem;
+        cursor: pointer;
+        width: 100%;
+        border: 2px solid var(--yellow-dark);
+        color: var(--yellow-dark);
+        background: var(--yellow-light);
+        font-weight: 700;
+    }
     }
   }
 

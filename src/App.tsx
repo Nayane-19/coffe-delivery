@@ -1,14 +1,15 @@
 import { Router } from "./Router";
 import "./globalStyles.css";
 import { BrowserRouter } from "react-router-dom";
-import { CoffeContextProvider } from "./context/cartContext";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
     <BrowserRouter>
-      <CoffeContextProvider>
+      <Provider store={store}>
         <Router />
-      </CoffeContextProvider>
+      </Provider>
     </BrowserRouter>
   );
 }

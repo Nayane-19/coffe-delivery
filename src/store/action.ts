@@ -10,12 +10,9 @@ export function addCoffeAtCart(coffe: CoffeData) {
   };
 }
 
-export function calculateTotalCart(coffe: CoffeData) {
+export function calculateTotalCart() {
     return {
       type: ActionTypes.CAlCULATE_TOTAL,
-      payload: {
-        coffe,
-      },
     };
   }
 
@@ -42,6 +39,15 @@ export function setPayment(payment: string) {
     type: ActionTypes.SET_PAYMENT,
     payload: {
       payment,
+    },
+  };
+}
+
+export function changeQuantity(coffe: CoffeData) {
+  return {
+    type: ActionTypes.CHANGE_QUANTITY,
+    payload: {
+      coffe,
     },
   };
 }

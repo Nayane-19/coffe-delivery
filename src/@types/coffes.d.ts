@@ -9,6 +9,7 @@ export interface CoffeData {
     description: string;
     value: number;
     quantity: number;
+    image: string;
 }
 
 export interface AddressDataForm {
@@ -27,13 +28,8 @@ export interface PaymentOptionsData {
     icon: ReactNode;
 }
 
-export interface CoffeReduce {
-    cart: CoffeData[];
-    totalPayment: CartTotal;
-    address: AddressDataForm;
-}
-
 export interface CoffeContextData {
-    createNewCycle: (data: CoffeData) => void;
+    addCoffeToCart: (data: CoffeData) => void;
+    removeCoffeCart: (data: CoffeData) => void;
     cart: CoffeCartData[];
 }

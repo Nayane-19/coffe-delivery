@@ -8,6 +8,12 @@
     border-radius: 6px 44px;
     gap: 1rem;
 
+    .card-container {
+        overflow-y: auto;
+        max-height: 380px;
+    }
+    
+
     .info-coust {
         display: flex;
         flex-direction: column;
@@ -51,8 +57,11 @@
         }
     }
 
+   a {
+    width: 100%;
+    text-decoration: none;
     .confirm-payment {
-        background: var(--yellow);
+        background: var(--purple);
         color: var(--white);
         text-transform: uppercase;
         font-size: 0.875rem;
@@ -62,4 +71,5 @@
         font-weight: 700;
         margin-top: 24px;
     }
+   }
 }

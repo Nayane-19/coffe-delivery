@@ -25,6 +25,22 @@
             background: var(--yellow-light);
             color: var(--yellow-dark);
             border: none;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: var(--yellow-dark);
+                color: var(--white);
+                border-radius: 50%;
+                font-size: 10px;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     }
 }

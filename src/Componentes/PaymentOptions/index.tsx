@@ -2,6 +2,9 @@ import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react"
 import { PaymentOptionsData } from "../../@types/coffes"
 import { Button } from "../Button"
 import "./PaymentOptions.scss"
+import { useDispatch, useSelector } from 'react-redux';
+import { setPayment } from "../../store/action";
+import { StateStore } from "../../@types/reduce";
 
 const paymentOptions: PaymentOptionsData[] = [
     {
@@ -22,6 +25,13 @@ const paymentOptions: PaymentOptionsData[] = [
 ]
 
 export function PaymentOptions() {
+    const dispatch = useDispatch();
+    const payment = useSelector((state: StateStore) => state.CoffePersistentState.paymentMethod)
+
+    function handlePaymentMethod(payment: string) {
+        dispatch(setPayment(payment))
+    }
+
     return (
         <div className="PaymentOptions">
             <div className="header">
@@ -38,7 +48,10 @@ export function PaymentOptions() {
             <div className="options">
                 {paymentOptions.map((option) => {
                     return (
-                        <Button className="option-payment">
+                        <Button
+                            className={`option-payment ${option.description === payment ? "selected" : ""}`}
+                            onClick={() => handlePaymentMethod(option.description)}
+                        >
                             {option.icon} 
                             {option.description}
                         </Button>

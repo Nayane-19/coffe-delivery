@@ -45,3 +45,23 @@
     font-size: 1rem;
     background: var(--base-input);
   }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(var(--base-hover): var(--base-hover), $var(--base-hover): 0.2);
+    border-radius: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--base-button);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--base-label);
+  }

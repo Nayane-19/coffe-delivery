@@ -3,8 +3,12 @@ import Illustration from "../../assets/illustration.svg"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { InfoPurchase } from "../../Componentes/InfoPurchase"
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
+import { useSelector } from 'react-redux';
+import { StateStore } from "../../@types/reduce"
+import { AddressDataForm } from "../../@types/coffes"
 
 export function Success() {
+    const [address, payment]: [AddressDataForm, string] = useSelector((state: StateStore) => [state.CoffePersistentState.address, state.CoffePersistentState.paymentMethod])
     return (
         <div className="Success">
             <div className="left-container">
@@ -17,11 +21,11 @@ export function Success() {
                         icon={<MapPin size={16} weight="fill" />}
                         title={
                             <span>
-                                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                                Entrega em <strong>{address.street}, {address.number}</strong>
                             </span>
                         }
                         subtitle={
-                            <span>Farrapos - Porto Alegre, RS</span>
+                            <span>{address.neighborhood} - {address.city}, {address.state}</span>
                         }
                         className="purple"
                     />
@@ -45,7 +49,7 @@ export function Success() {
                             </span>
                         }
                         subtitle={
-                            <strong>Cartão de Crédito</strong>
+                            <strong>{payment}</strong>
                         }
                         className="yellow-dark"
                     />
