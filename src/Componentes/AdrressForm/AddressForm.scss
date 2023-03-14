@@ -36,12 +36,15 @@
 
     svg {
       color: var(--yellow-dark);
+      width: 20px;
+      height: 20px;
     }
 
     .title {
       display: flex;
       flex-direction: column;
       gap: 0.125rem;
+      max-width: 85%;
 
       h6 {
         font-size: 1rem;
@@ -112,6 +115,16 @@
         background: var(--yellow-light);
         font-weight: 700;
     }
+    }
+  }
+
+  @media(max-width: 768px) {
+    padding: 1rem;
+    form {
+      .grid-container {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 

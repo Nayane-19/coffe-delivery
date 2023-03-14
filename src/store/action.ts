@@ -51,3 +51,8 @@ export function changeQuantity(coffe: CoffeData) {
     },
   };
 }
+
+export function setModal() {
+  return {type: ActionTypes.SET_MODAL}
+}
+

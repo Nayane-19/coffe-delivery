@@ -38,7 +38,7 @@ export function CartCard({coffe}: CartCardProps) {
   function removeCoffe(coffe: CoffeData) {
     dispatch(removeCoffeAtCart(coffe))
     dispatch(calculateTotalCart());
-    alertify.notify("Café removido no carrinho", "error", 5, null);
+    alertify.notify("Café removido no carrinho", "error", 3, null);
   }
 
   return (

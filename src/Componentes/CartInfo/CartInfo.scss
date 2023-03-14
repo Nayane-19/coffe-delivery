@@ -1,6 +1,6 @@
 .CartInfo {
     background: var(--base-card);
-    padding: 2.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +11,7 @@
     .card-container {
         overflow-y: auto;
         max-height: 380px;
+        width: 100%;
     }
     
 
@@ -57,9 +58,6 @@
         }
     }
 
-   a {
-    width: 100%;
-    text-decoration: none;
     .confirm-payment {
         background: var(--purple);
         color: var(--white);
@@ -71,5 +69,12 @@
         font-weight: 700;
         margin-top: 24px;
     }
+
+   @media (max-width: 981px) {
+        padding: 1rem;
+
+        .card-container {
+            width: 100%;
+        }
    }
 }

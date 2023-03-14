@@ -1,0 +1,29 @@
+.ModalForm {
+    background: var(--base-card);
+    border-radius: 6px;
+    padding: 1rem;
+    position: fixed;
+    z-index: 100;
+    top: auto;
+    top: 20%;
+    left: 30%;
+    max-width: 615px;
+
+    svg {
+        float: right;
+        cursor: pointer;
+    }
+
+    .AddressForm {
+        width: 100%;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    @media (max-width: 500px) {
+        height: 100%;
+        left: 0;
+        width: 100%;
+        top: 0;
+    }
+}

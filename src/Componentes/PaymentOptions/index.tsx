@@ -51,6 +51,7 @@ export function PaymentOptions() {
                         <Button
                             className={`option-payment ${option.description === payment ? "selected" : ""}`}
                             onClick={() => handlePaymentMethod(option.description)}
+                            key={option.description}
                         >
                             {option.icon} 
                             {option.description}

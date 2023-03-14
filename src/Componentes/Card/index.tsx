@@ -25,7 +25,7 @@ export function Card({ coffe }: CardProps) {
       })
     );
     dispatch(calculateTotalCart());
-    alertify.notify("Café adicionado no carrinho", "success", 5, null);
+    alertify.notify("Café adicionado no carrinho", "success", 3, null);
   }
 
   useEffect(() => {

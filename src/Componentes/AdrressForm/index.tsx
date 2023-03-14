@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddressDataForm } from "../../@types/coffes";
 import { StateStore } from "../../@types/reduce";
 import addressSchema from "../../Schemas/addressSchema";
-import { setAddress } from "../../store/action";
+import { setAddress, setModal } from "../../store/action";
 import "./AddressForm.scss";
 import InputMask from "react-input-mask";
 import * as alertify from 'alertifyjs';
 
 export function AddressForm() {
-  const address = useSelector(
-    (state: StateStore) => state.CoffePersistentState.address
+  const [address, modal] = useSelector(
+    (state: StateStore) => [state.CoffePersistentState.address, state.CoffePersistentState.modal]
   );
   const dispatch = useDispatch();
   const {
@@ -35,7 +35,9 @@ export function AddressForm() {
 
   function onSubmit(address: AddressDataForm) {
     dispatch(setAddress(address));
-    alertify.notify("Endereço adiocionado com sucesso", "success", 5, null);
+
+    if(modal) dispatch(setModal());
+    alertify.notify("Endereço adicionado com sucesso", "success", 3, null);
   }
 
   return (

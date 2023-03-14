@@ -3,6 +3,7 @@ export interface CoffeReduce {
     totalPayment: CartTotal;
     address: AddressDataForm;
     paymentMethod: string;
+    modal: boolean;
 }
 
 export interface StateStore {

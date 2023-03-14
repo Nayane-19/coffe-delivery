@@ -26,4 +26,15 @@
     .right-container {
         width: 35%;
     }
+
+    @media (max-width: 981px) {
+        flex-direction: column;
+        .left-container {
+            width: 100%;
+        }
+    
+        .right-container {
+            width: 100%;
+        }
+    }
 }

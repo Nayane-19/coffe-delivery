@@ -20,6 +20,7 @@ const initialState: CoffeReduce = {
     street: "",
   },
   paymentMethod: "",
+  modal: false,
 };
 
 export function coffeReduce(state = initialState, action: any) {
@@ -77,6 +78,11 @@ export function coffeReduce(state = initialState, action: any) {
         (draft.totalPayment.delivery = deliveryValue),
           (draft.totalPayment.totalItems = total),
           (draft.totalPayment.totalValue = total + deliveryValue);
+      });
+    
+    case ActionTypes.SET_MODAL:
+      return produce(state, (draft) => {
+        draft.modal = !state.modal;
       });
 
     default:
